@@ -36,4 +36,4 @@ Check that the table was successfully created:
     (1 row)
 
 To set up test database:
-  run ./db/migrations/02_create_bookmarks_table_test.sql
+  run ./db/migrations/02_create_bookmarks_test_db_and_table.sql
