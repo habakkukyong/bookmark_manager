@@ -7,6 +7,11 @@ class BookmarkApp < Sinatra::Base
     erb :index
   end
 
+  post '/' do
+    Bookmark.add_bookmark(params[:Add_url])
+    erb :index
+  end
+
   get '/bookmarks' do
     @bookmarks = Bookmark.all
     erb :bookmarks
