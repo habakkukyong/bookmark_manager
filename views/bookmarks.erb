@@ -13,7 +13,7 @@
         <tr>
           <td><a href="<%= bookmark['url'] %>" target="_blank"><%= bookmark['title'] %></a></td>
           <td><form action="/delete" method="post">
-            <button type="submit" name="deletion" value="<%= bookmark['title'] %>"><%="Delete #{bookmark['title']}"%></button>
+            <button type="submit" name="deletion" value="<%= bookmark['id'] %>"><%="Delete #{bookmark['title']}"%></button>
           </form></td>
         </tr>
       <% end %>

@@ -14,9 +14,9 @@ class Bookmark
     @connection.exec ("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')")
   end
 
-  def self.delete(row_title)
+  def self.delete(row_id)
     connect_db
-    @connection.exec ("DELETE FROM bookmarks WHERE title = '#{row_title}'")
+    @connection.exec ("DELETE FROM bookmarks WHERE id = '#{row_id}'")
   end
 
   private

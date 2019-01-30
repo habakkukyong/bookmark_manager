@@ -19,8 +19,9 @@ describe Bookmark do
 
   describe '#delete_bookmark' do
     it 'deletes a bookmark from the database' do
-      Bookmark.delete("Makers")
-      expect(Bookmark.all).to_not include({id: 1, url: 'http://www.makersacademy.com', title: 'Makers'})
+      setup_test_database
+      Bookmark.delete(2)
+      expect(Bookmark.all).to_not include({"id" => "2", "title" => "Destroy", "url" => "http://www.destroyallsoftware.com"})
     end
   end
 end
