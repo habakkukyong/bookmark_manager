@@ -3,8 +3,10 @@ require 'pg'
 class Bookmark
   def self.all
     connect_db
-    bookmarks = @connection.exec ("SELECT * FROM bookmarks")
-    bookmarks.map { |bookmark| [bookmark['url'], bookmark['title']] }
+    pg_object = @connection.exec ("SELECT * FROM bookmarks")
+    bookmarks = []
+    pg_object.each { |bookmark| bookmarks << bookmark }
+    bookmarks
   end
 
   def self.add_bookmark(url, title)
