@@ -4,12 +4,12 @@ class Bookmark
   def self.all
     connect_db
     bookmarks = @connection.exec ("SELECT * FROM bookmarks")
-    bookmarks.map { |bookmark| bookmark['url'] }
+    bookmarks.map { |bookmark| [bookmark['url'], bookmark['title']] }
   end
 
-  def self.add_bookmark(new_bookmark)
+  def self.add_bookmark(url, title)
     connect_db
-    @connection.exec ("INSERT INTO bookmarks (url) VALUES('#{new_bookmark}')")
+    @connection.exec ("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')")
   end
 
   private

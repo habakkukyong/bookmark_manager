@@ -12,12 +12,13 @@
       <p>Click below to access your bookmarks</p>
     </div>
 
-    <form action='/bookmarks'>
+    <form action='/bookmarks' method='get'>
       <button type="submit">View Bookmarks</button>
     </form>
 
-    <form action='/' method='post'>
-      <input type='text' name='Add_url'></input>
+    <form action='/add' method='post'>
+      <input type='text' name='Add_url' placeholder="Enter URL"></input>
+      <input type="text" name="Add_title" placeholder="Enter Title"></input>
       <button type="submit">Add bookmark</button>
     </form>
   </body>

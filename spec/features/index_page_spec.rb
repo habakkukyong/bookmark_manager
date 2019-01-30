@@ -14,8 +14,10 @@ feature 'index view' do
   scenario 'user adds a bookmark' do
     visit '/'
     fill_in('Add_url', with: 'http://www.distrowatch.org')
+    fill_in('Add_title', with: 'distro')
     click_button('Add bookmark')
     visit '/bookmarks'
-    expect(page).to have_content('http://www.distrowatch.org')
+    expect(page).to have_content('distro')
+    expect(page).to_not have_content('http://www.distrowatch.org')
   end
 end
