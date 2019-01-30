@@ -10,6 +10,15 @@
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null,
         1,
@@ -23,6 +32,15 @@
       "/Users/habakkukryong/Documents/Makers/Course/week-4/bookmark_manager/spec/features/bookmarks_page_spec.rb": [
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -57,6 +75,6 @@
         null
       ]
     },
-    "timestamp": 1548862346
+    "timestamp": 1548864256
   }
 }

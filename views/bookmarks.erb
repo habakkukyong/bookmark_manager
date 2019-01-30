@@ -11,7 +11,12 @@
       </tr>
       <% @bookmarks.each do |bookmark| %>
         <tr>
+
           <td><a href="<%= bookmark[0] %>" target="_blank"><%= bookmark[1] %></a></td>
+
+
+          <td><form action="/delete" method="post"><button type="submit" name="deletion" value="<%= bookmark[1] %>"><%="Delete #{bookmark[1]}"%></button></form></td>
+
         </tr>
       <% end %>
     </table>
