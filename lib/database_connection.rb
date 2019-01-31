@@ -8,4 +8,8 @@ class DatabaseConnection
   def self.connection
     @connection
   end
+
+  def self.query(db_query)
+    @connection.exec(db_query)
+  end
 end

@@ -7,6 +7,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative '../app.rb'
 require_relative './setup_test_database'
+require_relative '../database_connection_setup.rb'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -22,6 +23,7 @@ Capybara.app = BookmarkApp
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    connect_db
   end
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

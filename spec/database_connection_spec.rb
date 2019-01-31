@@ -16,8 +16,8 @@ describe DatabaseConnection do
   describe '#query' do
     it 'takes an sql query and executes it on the connection' do
       connection = DatabaseConnection.setup('bookmark_manager_test')
-      DatabaseConnection.query('SELECT * FROM bookmarks;')
       expect(connection).to receive(:exec).with('SELECT * FROM bookmarks;')
+      DatabaseConnection.query('SELECT * FROM bookmarks;')
     end
   end
 end
