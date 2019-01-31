@@ -20,4 +20,12 @@ feature 'index view' do
     expect(page).to have_content('distro')
     expect(page).to_not have_content('http://www.distrowatch.org')
   end
+
+  scenario 'user adds invalid url' do
+    visit '/'
+    fill_in('Add_url', with: 'www.distrowatch.org')
+    click_button('Add bookmark')
+    expect(page).to have_content('URL invalid')
+    expect(page).to_not have_content('www.distrowatch.org')
+  end
 end

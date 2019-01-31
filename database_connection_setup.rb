@@ -1,5 +1,4 @@
-require './lib/database_connection'
-require 'pg'
+require_relative './lib/database_connection'
 
 def connect_db
   if ENV['RACK_ENV'] == 'test'
