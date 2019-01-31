@@ -19,6 +19,11 @@ class Bookmark
     @connection.exec ("DELETE FROM bookmarks WHERE id = '#{row_id}'")
   end
 
+  def self.update(id, url)
+    connect_db
+    @connection.exec ("UPDATE bookmarks SET url = '#{url}' WHERE id = '#{id}'")
+  end
+
   private
 
   def self.connect_db

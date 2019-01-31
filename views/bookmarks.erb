@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Habalex BookMark Manager - Bookmark View</title>
+    <title>Bookmark Manager - Bookmark View</title>
   </head>
   <body>
     <h1>Bookmark List</h1>
     <table>
       <tr>
-        <th>URL</th>
+        <th>Bookmark</th>
+        <th>Remove</th>
+        <th>New URL</th>
+        <th>Execute update</th>
+
       </tr>
       <% @bookmarks.each do |bookmark| %>
         <tr>
           <td><a href="<%= bookmark['url'] %>" target="_blank"><%= bookmark['title'] %></a></td>
           <td><form action="/delete" method="post">
             <button type="submit" name="deletion" value="<%= bookmark['id'] %>"><%="Delete #{bookmark['title']}"%></button>
+          </form></td>
+          <td><form action="/update" method="post">
+            <input type="text" name="new_url" placeholder="<%= bookmark['url'] %>"></input>
+            <input type="hidden" name="updated_bookmark_id" value="<%= bookmark['id'] %>">
+            <button type="submit">update <%= bookmark['title'] %></button>
           </form></td>
         </tr>
       <% end %>

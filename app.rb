@@ -22,4 +22,9 @@ class BookmarkApp < Sinatra::Base
     redirect '/bookmarks'
   end
 
+  post '/update' do
+    Bookmark.update(params[:updated_bookmark_id], params[:new_url])
+    redirect '/bookmarks'
+  end
+
 end
