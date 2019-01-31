@@ -6,7 +6,6 @@ require 'sinatra/flash'
 
 # Handles http requests responding to some by passing params to Bookmark class
 class BookmarkApp < Sinatra::Base
-  enable :sessions
   register Sinatra::Flash
 
   get '/' do
@@ -14,11 +13,11 @@ class BookmarkApp < Sinatra::Base
   end
 
   post '/add' do
-    if params[:Add_url].match?(/\Ahttp/)
-      Bookmark.add_bookmark(params[:Add_url], params[:Add_title])
-      redirect '/'
+    if Bookmark.add_bookmark(params[:Add_url], params[:Add_title])
+        redirect '/'
     else
       flash[:notice] = "URL invalid"
+      redirect '/'
     end
   end
 

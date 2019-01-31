@@ -9,7 +9,11 @@ class Bookmark
   end
 
   def self.add_bookmark(url, title)
-    DatabaseConnection.query("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')")
+    if is_valid_url?(url)
+      DatabaseConnection.query("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}')")
+    else
+      false
+    end
   end
 
   def self.delete(row_id)
@@ -17,6 +21,16 @@ class Bookmark
   end
 
   def self.update(id, url)
-    DatabaseConnection.query("UPDATE bookmarks SET url = '#{url}' WHERE id = '#{id}'")
+    if is_valid_url?(url)
+      DatabaseConnection.query("UPDATE bookmarks SET url = '#{url}' WHERE id = '#{id}'")
+    else
+      false
+    end
+  end
+
+  private
+
+  def self.is_valid_url?(url)
+    url.match?(/\Ahttp/)
   end
 end
