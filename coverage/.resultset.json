@@ -30,6 +30,31 @@
         null,
         null
       ],
+      "/Users/habakkukryong/Documents/Makers/Course/week-4/bookmark_manager/spec/database_connection_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/habakkukryong/Documents/Makers/Course/week-4/bookmark_manager/spec/features/bookmarks_page_spec.rb": [
         1,
         null,
@@ -87,6 +112,6 @@
         null
       ]
     },
-    "timestamp": 1548932319
+    "timestamp": 1548941153
   }
 }

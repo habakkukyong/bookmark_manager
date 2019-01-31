@@ -1,8 +1,10 @@
+require_relative './database_connection_setup'
 require 'sinatra/base'
 require_relative './lib/bookmark'
 
-class BookmarkApp < Sinatra::Base
 
+# Handles http requests responding to some by passing params to Bookmark class
+class BookmarkApp < Sinatra::Base
   get '/' do
     erb :index
   end
@@ -26,5 +28,4 @@ class BookmarkApp < Sinatra::Base
     Bookmark.update(params[:updated_bookmark_id], params[:new_url])
     redirect '/bookmarks'
   end
-
 end
