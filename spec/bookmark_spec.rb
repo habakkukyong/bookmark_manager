@@ -21,6 +21,10 @@ describe Bookmark do
       Bookmark.add_bookmark("www.distrowatch.org", "distro")
       expect(Bookmark.all).not_to include({"id" => "1", "title" => "distro", "url" => "www.distrowatch.org"})
     end
+
+    it 'returns false if invalid url entered' do
+      expect(Bookmark.add_bookmark("www.distrowatch.org", "distro")).to eq false
+    end
   end
 
   describe '#delete_bookmark' do

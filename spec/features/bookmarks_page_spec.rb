@@ -20,10 +20,10 @@ feature 'delete a book from the list' do
     scenario 'user updates existing bookmark giving it new url' do
       populate_test_db
       visit '/bookmarks'
-      fill_in('http://www.destroyallsoftware.com', with: 'http://wwww.foo.com')
+      fill_in('http://www.destroyallsoftware.com', with: 'http://wwww.saveallsoftware.com')
       click_button('update Destroy')
       expect(page).to_not have_link('Destroy', href: 'http://www.destroyallsoftware.com')
-      expect(page).to have_link('Destroy', href: 'http://wwww.foo.com')
+      expect(page).to have_link('Destroy', href: 'http://wwww.saveallsoftware.com')
     end
   end
 end
